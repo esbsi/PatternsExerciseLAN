@@ -1,6 +1,6 @@
 package be.abis.patternsexercise.model;
 
-public class Packet {
+public class Packet implements PacketComponent{
 
     private String destinationAddress;
     private String contents;

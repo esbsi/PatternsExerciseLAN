@@ -1,23 +1,20 @@
 package be.abis.patternsexercise.model;
 
-public class PrintServer extends Node{
+public class PrintServer extends PacketHandler{
 
-    public PrintServer(String address) {
+    private PrintServerStrategy printServerStrategy;
+
+    public PrintServer(String address, PrintServerStrategy printServerStrategy) {
         super(address);
+        this.printServerStrategy = printServerStrategy;
     }
 
 
     // business
 
     @Override
-    public void receive(Packet packet) {
-        if (packet.getDestinationAddress() == this.getAddress()){
-            PrintServerStrategy.print(packet);
-        } else {
-            this.getNextComponent().receive(packet);
-        }
-
-
+    public void handle(Packet packet) {
+        printServerStrategy.print(packet);
     }
 
 

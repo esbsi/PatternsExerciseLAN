@@ -17,7 +17,6 @@ public abstract class LanComponent {
     public abstract void receive(Packet packet);
 
 
-
     // get&set
 
     public String getAddress() {
@@ -35,5 +34,7 @@ public abstract class LanComponent {
     public void setNextComponent(LanComponent nextComponent) {
         this.nextComponent = nextComponent;
     }
+
+
 
 }

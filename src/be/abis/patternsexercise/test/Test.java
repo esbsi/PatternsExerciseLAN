@@ -1,25 +1,32 @@
 package be.abis.patternsexercise.test;
 
-import be.abis.patternsexercise.model.Node;
-import be.abis.patternsexercise.model.Packet;
-import be.abis.patternsexercise.model.PrintServer;
-import be.abis.patternsexercise.model.WorkStation;
+import be.abis.patternsexercise.model.*;
 
 public class Test {
     public static void main(String[] args) {
 
-        Packet packet1 = new Packet("9", "testmessage");
+        LanComponentFactory lanComponentFactory = LanComponentFactory.getInstance();
+//        lanComponentFactory.createLanComponent(ComponentType.WORKSTATION, "1");
 
-        WorkStation workStation1 = new WorkStation("1");
-        WorkStation workStation2 = new WorkStation("2");
-        Node node3 = new Node("3");
-        Node node4 = new Node("4");
-        PrintServer printServer9 = new PrintServer("9");
 
-        workStation1.setNextComponent(node3);
-        node3.setNextComponent(printServer9);
 
-        workStation1.originate(packet1);
+//        Packet packet1 = new Packet("10", "test message");
+        PacketFactory textPacketFactory = PacketFactory.createPacketFactory(PacketType.TEXT);
+        Packet packet1 = textPacketFactory.createPacket("8", "Simple LAN factory test message");
+        Packet packet2 = textPacketFactory.createPacket("11", "Extended LAN factory test message");
+
+
+        SimpleLanFactory simpleLanFactory = SimpleLanFactory.getInstance();
+        simpleLanFactory.createNodes();
+        simpleLanFactory.createLan(simpleLanFactory.getNodes());
+        (simpleLanFactory.findWorkStation(simpleLanFactory.getNodes(), "1")).originate(packet1);
+
+        ExtendedLanFactory extendedLanFactory = ExtendedLanFactory.getInstance();
+        extendedLanFactory.createNodes();
+        extendedLanFactory.createLan(extendedLanFactory.getNodes());
+        extendedLanFactory.findWorkStation(extendedLanFactory.getNodes(), "2").originate(packet2);
+
+
 
     }
 }
