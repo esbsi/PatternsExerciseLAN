@@ -28,4 +28,10 @@ public abstract class PictogramDecorator implements Pictogram{
     public String toString() {
         return message;
     }
+
+    @Override
+    public Node getNode() {
+        return node;
+    }
+
 }
