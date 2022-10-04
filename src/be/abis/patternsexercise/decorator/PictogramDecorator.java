@@ -15,6 +15,8 @@ public abstract class PictogramDecorator implements Pictogram{
     }
 
 
+    // getset
+
     @Override
     public String getMessage() {
         return message;
