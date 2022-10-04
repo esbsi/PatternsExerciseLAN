@@ -1,17 +1,22 @@
-package be.abis.patternsexercise.model;
+package be.abis.patternsexercise.factory;
+
+import be.abis.patternsexercise.model.*;
+import be.abis.patternsexercise.strategy.LaserPrinter;
+import be.abis.patternsexercise.strategy.Printer3D;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ExtendedLanFactory extends LanFactory{
+public class SimpleLanFactory extends LanFactory{
 
     List<Node> nodes = new ArrayList<>();
 
-    private static ExtendedLanFactory instance;
-    private ExtendedLanFactory(){}
-    public static ExtendedLanFactory getInstance() {
+    private static SimpleLanFactory instance;
+    private SimpleLanFactory(){}
+
+    public static SimpleLanFactory getInstance() {
         if (instance==null){
-            instance = new ExtendedLanFactory();
+            instance = new SimpleLanFactory();
         }
         return instance;
     }
@@ -23,9 +28,7 @@ public class ExtendedLanFactory extends LanFactory{
         nodes.add(new Node("3"));
         nodes.add(new Node("4"));
         nodes.add(new PrintServer("8", new Printer3D()));
-        nodes.add(new FileServer("10"));
-        nodes.add(new TapeStreamerAdapter("11", new TapeStreamer()));
-        nodes.add(new MQServer("12"));
+        nodes.add(new PrintServer("9", new LaserPrinter()));
         return nodes;
     }
 

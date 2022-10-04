@@ -1,4 +1,8 @@
-package be.abis.patternsexercise.model;
+package be.abis.patternsexercise.factory;
+
+import be.abis.patternsexercise.model.LanType;
+import be.abis.patternsexercise.model.Node;
+import be.abis.patternsexercise.model.WorkStation;
 
 import java.util.List;
 

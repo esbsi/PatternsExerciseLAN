@@ -1,5 +1,7 @@
 package be.abis.patternsexercise.model;
 
+import be.abis.patternsexercise.strategy.PrintServerStrategy;
+
 public class PrintServer extends PacketHandler{
 
     private PrintServerStrategy printServerStrategy;

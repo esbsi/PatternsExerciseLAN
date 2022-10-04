@@ -1,4 +1,6 @@
-package be.abis.patternsexercise.model;
+package be.abis.patternsexercise.strategy;
+
+import be.abis.patternsexercise.model.Packet;
 
 public class InkjetPrinter implements PrintServerStrategy{
 

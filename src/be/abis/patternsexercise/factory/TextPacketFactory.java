@@ -1,6 +1,10 @@
-package be.abis.patternsexercise.model;
+package be.abis.patternsexercise.factory;
 
-public class TextPacketFactory extends PacketFactory {
+import be.abis.patternsexercise.model.Packet;
+
+public class TextPacketFactory
+        //extends PacketFactory
+        {
     private static TextPacketFactory instance = new TextPacketFactory();
     private TextPacketFactory(){}
     public static TextPacketFactory getInstance(){return instance;}

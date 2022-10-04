@@ -1,4 +1,7 @@
-package be.abis.patternsexercise.model;
+package be.abis.patternsexercise.factory;
+
+import be.abis.patternsexercise.model.*;
+import be.abis.patternsexercise.strategy.PrintServerStrategy;
 
 public class LanComponentFactory extends ComponentFactory{
 

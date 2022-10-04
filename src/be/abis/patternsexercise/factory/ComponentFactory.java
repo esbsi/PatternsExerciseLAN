@@ -1,4 +1,8 @@
-package be.abis.patternsexercise.model;
+package be.abis.patternsexercise.factory;
+
+import be.abis.patternsexercise.model.ComponentType;
+import be.abis.patternsexercise.model.LanComponent;
+import be.abis.patternsexercise.strategy.PrintServerStrategy;
 
 public abstract class ComponentFactory {
 
