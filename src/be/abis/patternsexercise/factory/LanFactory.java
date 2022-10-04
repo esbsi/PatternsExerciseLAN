@@ -1,6 +1,6 @@
 package be.abis.patternsexercise.factory;
 
-import be.abis.patternsexercise.model.LanType;
+import be.abis.patternsexercise.enums.LanType;
 import be.abis.patternsexercise.model.Node;
 import be.abis.patternsexercise.model.WorkStation;
 

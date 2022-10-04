@@ -1,15 +1,14 @@
 package be.abis.patternsexercise.factory;
 
-import be.abis.patternsexercise.model.Packet;
 import be.abis.patternsexercise.model.PacketComponent;
-import be.abis.patternsexercise.model.PacketType;
-import be.abis.patternsexercise.model.SuperPacket;
+import be.abis.patternsexercise.enums.PacketType;
 
 public abstract class PacketFactory {
     public static PacketFactory createPacketFactory(PacketType packetType){
         switch (packetType){
             default:
-            case TEXT : return SuperPacketFactory.getInstance();
+            case TEXT : return TextPacketFactory.getInstance();
+            case SUPER: return SuperPacketFactory.getInstance();
         }
     }
 

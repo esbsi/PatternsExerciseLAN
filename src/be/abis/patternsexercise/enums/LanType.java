@@ -1,4 +1,4 @@
-package be.abis.patternsexercise.model;
+package be.abis.patternsexercise.enums;
 
 public enum LanType {
 

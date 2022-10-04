@@ -1,5 +1,9 @@
 package be.abis.patternsexercise.test;
 
+import be.abis.patternsexercise.decorator.Circle;
+import be.abis.patternsexercise.decorator.Pictogram;
+import be.abis.patternsexercise.decorator.Shade;
+import be.abis.patternsexercise.enums.PacketType;
 import be.abis.patternsexercise.factory.ExtendedLanFactory;
 import be.abis.patternsexercise.factory.LanComponentFactory;
 import be.abis.patternsexercise.factory.PacketFactory;
@@ -16,9 +20,10 @@ public class Test {
 
 //        Packet packet1 = new Packet("10", "test message");
         PacketFactory textPacketFactory = PacketFactory.createPacketFactory(PacketType.TEXT);
-        SuperPacket packet1 = textPacketFactory.createPacket("8", "Simple LAN factory test message");
-        SuperPacket packet2 = textPacketFactory.createPacket("11", "Extended LAN factory test message");
-        SuperPacket packetCompositeExercise = textPacketFactory.createPacket("11", "This sentence should be split and reassembled. Hope you received it well. Please confirm. Thanks.");
+        PacketFactory superPacketFactory = PacketFactory.createPacketFactory(PacketType.SUPER);
+        PacketComponent packet1 = textPacketFactory.createPacket("8", "Simple LAN factory test message");
+        PacketComponent packet2 = textPacketFactory.createPacket("11", "Extended LAN factory test message");
+        PacketComponent packetCompositeExercise = superPacketFactory.createPacket("11", "This sentence should be split and reassembled. Hope you received it well. Please confirm. Thanks.");
 
 
         SimpleLanFactory simpleLanFactory = SimpleLanFactory.getInstance();
@@ -31,6 +36,10 @@ public class Test {
         extendedLanFactory.createLan(extendedLanFactory.getNodes());
 //        extendedLanFactory.findWorkStation(extendedLanFactory.getNodes(), "2").originate(packet2);
 
+        Node node = new Node("6");
+
+        Pictogram pictogram = new Shade(new Circle(node));
+        System.out.println(pictogram);
 
 
     }

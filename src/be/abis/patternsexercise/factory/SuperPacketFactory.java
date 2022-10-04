@@ -8,12 +8,10 @@ import java.lang.reflect.Array;
 
 public class SuperPacketFactory extends PacketFactory {
 
-    private static SuperPacketFactory instance;
+    private static PacketFactory instance = new SuperPacketFactory();
     private SuperPacketFactory(){}
-    public static SuperPacketFactory getInstance() {
-        if (instance != null){
-            instance = new SuperPacketFactory();
-        }
+
+    public static PacketFactory getInstance() {
         return instance;
     }
 
