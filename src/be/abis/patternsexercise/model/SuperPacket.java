@@ -8,7 +8,7 @@ public class SuperPacket implements PacketComponent{
     private String destinationAddress;
     private String contents;
 
-    private List<PacketComponent> packetComponents = new ArrayList<>();
+    private List<PacketComponent> packetComponents = new ArrayList<>() ;
 
     public SuperPacket(String destinationAddress, String contents) {
         this.destinationAddress = destinationAddress;
@@ -18,12 +18,11 @@ public class SuperPacket implements PacketComponent{
 
     // business
 
-    public void addPacketComponent(PacketComponent packetComponent){
-        packetComponents.add(packetComponent);
-    }
+    public void addPacketComponent(PacketComponent packetComponent){packetComponents.add(packetComponent);}
 
 
     // getset
+
 
     public List<PacketComponent> getPacketComponents() {
         return packetComponents;

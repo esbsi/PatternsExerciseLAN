@@ -9,7 +9,7 @@ public class WorkStation extends Node{
 
     // business
 
-    public void originate(Packet packet){
+    public void originate(PacketComponent packet){
         this.getNextComponent().receive(packet);
     }
 

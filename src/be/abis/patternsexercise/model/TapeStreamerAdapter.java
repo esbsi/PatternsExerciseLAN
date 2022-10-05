@@ -14,7 +14,7 @@ public class TapeStreamerAdapter extends PacketHandler implements TapeStreamerAd
     }
 
     @Override
-    public void handle(Packet packet) {
+    public void handle(PacketComponent packet) {
         tapeStreamer.stream(packet);
     }
 }

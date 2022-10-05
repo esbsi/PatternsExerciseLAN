@@ -1,9 +1,9 @@
 package be.abis.patternsexercise.strategy;
 
-import be.abis.patternsexercise.model.Packet;
+import be.abis.patternsexercise.model.PacketComponent;
 
 public interface PrintServerStrategy {
 
-    void print(Packet packet);
+    void print(PacketComponent packet);
 
 }

@@ -4,8 +4,6 @@ import be.abis.patternsexercise.model.Packet;
 import be.abis.patternsexercise.model.PacketComponent;
 import be.abis.patternsexercise.model.SuperPacket;
 
-import java.lang.reflect.Array;
-
 public class SuperPacketFactory extends PacketFactory {
 
     private static PacketFactory instance = new SuperPacketFactory();
@@ -21,13 +19,13 @@ public class SuperPacketFactory extends PacketFactory {
 //    private SuperPacket superPacket1 =
 
     public PacketComponent createPacket(String destinationAddress, String contents){
-        PacketComponent superPacket = new SuperPacket(destinationAddress, contents);
+        PacketComponent superPacket = new SuperPacket(destinationAddress, null);
         String[] sentences = contents.split("\\.");
         for (String sentence : sentences){
             PacketComponent sentencePacket = new SuperPacket(destinationAddress, sentence);
             String[] words = sentence.split("\\s");
             for (String word : words){
-                Packet wordPacket = new Packet(destinationAddress, word);
+                PacketComponent wordPacket = new Packet(destinationAddress, word);
                 ((SuperPacket)sentencePacket).addPacketComponent(wordPacket);
             }
             ((SuperPacket)superPacket).addPacketComponent(sentencePacket);

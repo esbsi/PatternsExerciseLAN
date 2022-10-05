@@ -1,6 +1,7 @@
 package be.abis.patternsexercise.factory;
 
 import be.abis.patternsexercise.model.Packet;
+import be.abis.patternsexercise.model.PacketComponent;
 
 public class TextPacketFactory extends PacketFactory {
     private static TextPacketFactory instance = new TextPacketFactory();
@@ -8,7 +9,7 @@ public class TextPacketFactory extends PacketFactory {
 
     public static TextPacketFactory getInstance(){return instance;}
 
-    public Packet createPacket(String destinationAddress, String contents){
+    public PacketComponent createPacket(String destinationAddress, String contents){
         return new Packet(destinationAddress, contents);
     }
 

@@ -8,7 +8,7 @@ import java.util.List;
 
 public abstract class LanFactory {
 
-    List<Node> nodes;
+    private List<Node> nodes;
 
     public static LanFactory createFactory(LanType lanType){
         switch (lanType){

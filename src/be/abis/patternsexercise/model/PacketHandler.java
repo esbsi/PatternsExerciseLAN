@@ -9,7 +9,7 @@ public abstract class PacketHandler extends Node {
     // business
 
     @Override
-    public void receive(Packet packet) {
+    public void receive(PacketComponent packet) {
         if (packet.getDestinationAddress().equals(this.getAddress())){
             this.handle(packet);
         } else {
@@ -17,6 +17,6 @@ public abstract class PacketHandler extends Node {
         }
     }
 
-    public abstract void handle(Packet packet);
+    public abstract void handle(PacketComponent packet);
 
 }

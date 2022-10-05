@@ -15,7 +15,7 @@ public class PrintServer extends PacketHandler{
     // business
 
     @Override
-    public void handle(Packet packet) {
+    public void handle(PacketComponent packet) {
         printServerStrategy.print(packet);
     }
 

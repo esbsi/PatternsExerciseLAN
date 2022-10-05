@@ -7,7 +7,7 @@ public class FileServer extends PacketHandler{
     }
 
     @Override
-    public void handle(Packet packet) {
+    public void handle(PacketComponent packet) {
         System.out.println("Saving file:\n\n" + packet.getContents());
     }
 }

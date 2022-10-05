@@ -7,7 +7,7 @@ public class MQServer extends PacketHandler{
     }
 
     @Override
-    public void handle(Packet packet) {
+    public void handle(PacketComponent packet) {
         System.out.println("Putting in message queue:\n\n" + packet.getContents());
     }
 }

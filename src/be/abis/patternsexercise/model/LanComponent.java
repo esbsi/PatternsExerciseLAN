@@ -12,9 +12,9 @@ public abstract class LanComponent {
 
     // business
 
-    public abstract void send(Packet packet);
+    public abstract void send(PacketComponent packet);
 
-    public abstract void receive(Packet packet);
+    public abstract void receive(PacketComponent packet);
 
 
     // get&set
