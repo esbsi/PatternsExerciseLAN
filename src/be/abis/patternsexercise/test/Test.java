@@ -1,14 +1,13 @@
 package be.abis.patternsexercise.test;
 
-import be.abis.patternsexercise.decorator.Circle;
-import be.abis.patternsexercise.decorator.Pictogram;
-import be.abis.patternsexercise.decorator.Shade;
+import be.abis.patternsexercise.decorator.*;
 import be.abis.patternsexercise.enums.PacketType;
 import be.abis.patternsexercise.factory.ExtendedLanFactory;
 import be.abis.patternsexercise.factory.LanComponentFactory;
 import be.abis.patternsexercise.factory.PacketFactory;
 import be.abis.patternsexercise.factory.SimpleLanFactory;
 import be.abis.patternsexercise.model.*;
+import be.abis.patternsexercise.strategy.LaserPrinter;
 
 public class Test {
     public static void main(String[] args) {
@@ -36,10 +35,17 @@ public class Test {
         extendedLanFactory.createLan(extendedLanFactory.getNodes());
 //        extendedLanFactory.findWorkStation(extendedLanFactory.getNodes(), "2").originate(packet2);
 
-        Node node = new Node("6");
+        Node node = new PrintServer("6", new LaserPrinter());
 
-        Pictogram pictogram = new Shade(new Circle(node));
+        Pictogram circle = new Circle(node);
+        PictogramDecorator shade = new Shade(circle);
+        System.out.println(shade);
+
+        Pictogram pictogram = new NodeName(new NodeImage(new Shade(new Circle(node))));
         System.out.println(pictogram);
+        Pictogram wrapper = new Shade(pictogram);
+        System.out.println(wrapper);
+
 
 
     }

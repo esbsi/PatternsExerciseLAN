@@ -12,7 +12,14 @@ public class Circle implements Pictogram{
     }
 
 
-    // getset
+    @Override
+    public String toString() {
+        return message;
+    }
+
+
+
+        // getset
 
     @Override
     public String getMessage() {
