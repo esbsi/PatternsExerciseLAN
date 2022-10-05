@@ -15,7 +15,7 @@ public class Test {
 
         PacketFactory textPacketFactory = PacketFactory.createPacketFactory(PacketType.TEXT);
         PacketComponent packet1 = textPacketFactory.createPacket("8", "Simple LAN factory test message");
-        PacketComponent packet2 = textPacketFactory.createPacket("11", "Extended LAN factory test message");
+        PacketComponent packet2 = textPacketFactory.createPacket("10", "Extended LAN factory test message");
 
         PacketFactory superPacketFactory = PacketFactory.createPacketFactory(PacketType.SUPER);
         PacketComponent packetCompositeExercise = superPacketFactory.createPacket("11", "This sentence should be split and reassembled. Hope you received it well. Please confirm. Thanks.");
@@ -28,7 +28,7 @@ public class Test {
         ExtendedLanFactory extendedLanFactory = ExtendedLanFactory.getInstance();
         LanFactoryFacade extendedLanFactoryFacade = new LanFactoryFacade(extendedLanFactory);
         extendedLanFactoryFacade.constructLan();
-        extendedLanFactoryFacade.findWorkStation(extendedLanFactory.getNodes(), "2").originate(packetCompositeExercise);
+        extendedLanFactoryFacade.findWorkStation(extendedLanFactory.getNodes(), "1").originate(packetCompositeExercise);
 
 
 

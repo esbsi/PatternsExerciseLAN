@@ -2,7 +2,9 @@ package be.abis.patternsexercise.factory;
 
 import be.abis.patternsexercise.enums.LanType;
 import be.abis.patternsexercise.model.Node;
+import be.abis.patternsexercise.model.PacketHandler;
 import be.abis.patternsexercise.model.WorkStation;
+import be.abis.patternsexercise.observer.PacketReceivedListener;
 
 import java.util.List;
 
@@ -25,6 +27,10 @@ public abstract class LanFactory {
 
     public void createLan(List<Node> nodesList) {
         for (int i = 0; i < nodesList.size(); i++ ){
+            Node node = nodesList.get(i);
+            if ("WorkStation".equals(node.getClass().getSimpleName())){
+                PacketHandler.addWorkstation((PacketReceivedListener)node);
+            }
             if (i == nodesList.size() - 1){
                 nodesList.get(i).setNextComponent(nodesList.get(0));
             } else {

@@ -7,6 +7,7 @@ public class SuperPacket implements PacketComponent{
 
     private String destinationAddress;
     private String contents;
+    private String originAddress;
 
     private List<PacketComponent> packetComponents = new ArrayList<>() ;
 
@@ -47,4 +48,16 @@ public class SuperPacket implements PacketComponent{
     public void setContents(String contents) {
         this.contents = contents;
     }
+
+    @Override
+    public String getOriginAddress() {
+        return originAddress;
+    }
+
+    @Override
+    public void setOriginAddress(String originAddress) {
+        this.originAddress = originAddress;
+    }
 }
+
+
